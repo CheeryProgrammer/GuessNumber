@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78BCB484-A3BC-47D3-8E7C-814CD3241530}</ProjectGuid>
+    <ProjectGuid>{68C5093D-C950-46C0-B533-CF3BFECE0A3F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GuessNumber</RootNamespace>
-    <AssemblyName>GuessNumber</AssemblyName>
+    <RootNamespace>TestApplication</RootNamespace>
+    <AssemblyName>TestApplication</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,12 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GuessNumberGameEngine\GuessNumberGameEngine.csproj">
-      <Project>{ab53e032-d62d-4f52-b0d1-d5c6d25d2fd7}</Project>
-      <Name>GuessNumberGameEngine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

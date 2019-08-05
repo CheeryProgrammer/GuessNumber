@@ -1,4 +1,5 @@
 ﻿using System;
+using GuessNumberGameEngine;
 
 namespace GuessNumber
 {
@@ -8,13 +9,11 @@ namespace GuessNumber
 		{
 			GreetAndStartGame();
 
-			int correction = 256;
-			int suggestion = 512;
-			int attemptsRemain = 10;
-
-			while (attemptsRemain >= 1)
+			Game game = new Game(256, 512, 10);
+			
+			while (game.IsGuessing())
 			{
-				int response = AskForSuccess(suggestion, attemptsRemain);
+				int response = AskForSuccess(game.GetSuggestion(), game.GetAttemptsCount());
 
 				if (response == 0)
 				{
@@ -22,19 +21,7 @@ namespace GuessNumber
 					return;
 				}
 
-				attemptsRemain--; // attemptsRemain = attemtsRemain - 1;
-
-				if (response == 1)
-				{
-					suggestion = suggestion + correction; // suggestion += correction;
-					correction /= 2;
-				}
-
-				if (response == 2)
-				{
-					suggestion -= correction;
-					correction /= 2;
-				}
+				game.CorrectSuggestion(response);
 			}
 
 			Console.WriteLine("Are you cheating me?!");
